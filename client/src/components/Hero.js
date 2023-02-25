@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import { Box, Card, CardMedia, Typography } from '@mui/material';
 import classes from './Hero.module.css';
 import dorivalHero1 from '../assets/images/dorival-hero-1.jpeg';
@@ -7,7 +7,7 @@ import axiomHero3 from '../assets/images/axiom-hero-3.jpg';
 import Carousel from 'react-material-ui-carousel';
 
 const Hero = () => {
-  const [slideshowIndex, setSlideshowIndex] = useState(0);
+  // const [slideshowIndex, setSlideshowIndex] = useState(0);
   const slideshowImg = [dorivalHero1, dorivalHero2, axiomHero3];
 
   // useEffect(() => {
