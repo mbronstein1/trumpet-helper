@@ -1,4 +1,3 @@
-// import React, { useEffect, useState } from 'react';
 import { Box, Card, CardMedia, Typography } from '@mui/material';
 import classes from './Hero.module.css';
 import dorivalHero1 from '../assets/images/dorival-hero-1.jpeg';
@@ -13,7 +12,7 @@ const Hero = () => {
     <Box className={classes['hero-container']}>
       <Card className={classes.overlay}></Card>
       <Box className={classes.slideshow}>
-        <Carousel duration={1000} interval={10000} indicators={false}>
+        <Carousel swipe={false} duration={1000} interval={10000} animation='slide' indicators={false}>
           {slideshowImg.map((item, i) => (
             <CardMedia key={`${item}: ${i}`} component='img' alt='Image-carousel' image={item} title='Image-carousel' style={{ height: '100svh' }} />
           ))}

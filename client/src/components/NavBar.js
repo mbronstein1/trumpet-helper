@@ -41,7 +41,7 @@ function NavBar({ window }) {
           <IconButton color='inherit' aria-label='open drawer' edge='start' onClick={handleDrawerToggle} sx={{ mr: 2, display: { sm: 'none' } }}>
             <MenuIcon />
           </IconButton>
-          <Typography variant='h5' component='div' sx={{ flexGrow: 1, textAlign: { xs: 'center', sm: 'left' } }}>
+          <Typography variant='h5' component='h1' sx={{ flexGrow: 1, textAlign: { xs: 'center', sm: 'left' } }}>
             Trumpet Helper
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
