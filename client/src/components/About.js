@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Paper, Card } from '@mui/material';
+import { Box, Container, Typography, Card } from '@mui/material';
 import { InView } from 'react-intersection-observer';
 import classes from './About.module.css';
 
@@ -25,7 +25,7 @@ const About = () => {
         </Container>
         <Container sx={{ display: 'flex', justifyContent: 'space-around' }}>
           {cardContent.map((item, index) => (
-            <InView rootMargin={item.rootMargin} threshold={0}>
+            <InView key={`About-content: ${index}`} rootMargin={item.rootMargin} threshold={0} onChange={inView => console.log(inView)}>
               {({ inView, ref }) => (
                 <Card ref={ref} elevation={0} sx={{ transform: `translate(${inView ? '0' : '-50px'}, ${item.translateY})`, transition: 'all 1s', opacity: `${inView ? 1 : 0}` }}>
                   <Typography>{item.icon}</Typography>
