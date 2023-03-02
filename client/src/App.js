@@ -1,13 +1,14 @@
 import React from 'react';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
+import About from './components/About';
 
 const App = () => {
   return (
     <div>
       <NavBar />
       <Hero />
-      <div>Full width Hero section image slideshow and text box</div>
+      <About />
       <div>About Trumpet Helper</div>
       <div>Pricing</div>
       <div>Testimonials</div>
