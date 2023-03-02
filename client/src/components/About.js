@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Card } from '@mui/material';
+import { Box, Container, Typography, Card, Grid } from '@mui/material';
 import { InView } from 'react-intersection-observer';
 import classes from './About.module.css';
 
@@ -11,7 +11,7 @@ const cardContent = [
 
 const About = () => {
   return (
-    <Box sx={{ mt: 5 }}>
+    <Box id='about' sx={{ mt: 5 }}>
       <Container elevation={5} component={Card} className={classes['about-container']}>
         <Typography component='h3' variant='h4' sx={{ p: 2 }}>
           About Trumpet Helper
@@ -23,18 +23,20 @@ const About = () => {
             aliquid unde sed, aperiam et porro beatae quo!
           </Typography>
         </Container>
-        <Container sx={{ display: 'flex', justifyContent: 'space-around' }}>
+        <Grid container spacing={2}>
           {cardContent.map((item, index) => (
-            <InView key={`About-content: ${index}`} rootMargin={item.rootMargin} threshold={0} onChange={inView => console.log(inView)}>
+            <InView key={`About-content: ${index}`} rootMargin={item.rootMargin} threshold={0}>
               {({ inView, ref }) => (
-                <Card ref={ref} elevation={0} sx={{ transform: `translate(${inView ? '0' : '-50px'}, ${item.translateY})`, transition: 'all 1s', opacity: `${inView ? 1 : 0}` }}>
-                  <Typography>{item.icon}</Typography>
-                  <Typography>{item.text}</Typography>
-                </Card>
+                <Grid item xs={12} sm={4}>
+                  <Card ref={ref} elevation={2} sx={{ transform: `translate(${inView ? '0' : '-50px'}, ${item.translateY})`, transition: 'all 1s', opacity: `${inView ? 1 : 0}` }}>
+                    <Typography>{item.icon}</Typography>
+                    <Typography>{item.text}</Typography>
+                  </Card>
+                </Grid>
               )}
             </InView>
           ))}
-        </Container>
+        </Grid>
       </Container>
     </Box>
   );

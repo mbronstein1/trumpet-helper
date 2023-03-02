@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AppBar, Box, CssBaseline, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Button } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
+import { Link } from 'react-scroll';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Pricing', 'Contact'];
@@ -34,7 +35,7 @@ function NavBar({ window }) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box id='home' sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component='nav' sx={{ backgroundColor: 'rgba(0, 0, 0, .3)', boxShadow: 0 }}>
         <Toolbar>
@@ -46,9 +47,11 @@ function NavBar({ window }) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map(item => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
+              <Link to={item.toLowerCase()} smooth={true} spy={true} activeClass='' duration='300'>
+                <Button key={item} sx={{ color: '#fff' }}>
+                  {item}
+                </Button>
+              </Link>
             ))}
             <Button variant='outlined' sx={{ backgroundColor: '#fff', marginLeft: '10px' }}>
               Signup
