@@ -1,5 +1,5 @@
 import { Card, Box, Container, Typography } from '@mui/material';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 
 const testimonialData = [
@@ -29,42 +29,15 @@ const carouselOptions = {
 };
 
 const Testimonials = () => {
-  // Handle window change to manually show or hide carousel button
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowSize(window.innerWidth);
-    };
-    window.addEventListener('resize', handleWindowResize);
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, []);
-
-  const navButtonsWrapperProps = {
-    sx: {
-      bottom: '50%',
-      top: 'unset',
-      display: `${windowSize > 690 ? 'inline' : 'none'}`,
-    },
-  };
-
-  const navButtonProps = {
-    style: {
-      backgroundColor: 'cornflowerblue',
-    },
-  };
-
   return (
-    <Container sx={{ textAlign: 'center', width: '700px' }}>
+    <Container sx={{ textAlign: 'center', width: '700px', maxWidth: '90%' }}>
       <Typography component='h3' variant='h4' sx={{ p: 2 }}>
         Testimonials
       </Typography>
       <Box>
-        <Carousel navButtonsProps={navButtonProps} navButtonsWrapperProps={navButtonsWrapperProps} {...carouselOptions}>
+        <Carousel navButtonsAlwaysInvisible {...carouselOptions}>
           {testimonialData.map((item, index) => (
-            <Card key={`${item.author}: ${index}`} sx={{ width: '500px', maxWidth: '95%', marginInline: 'auto' }}>
+            <Card key={`${item.author}: ${index}`}>
               <Typography sx={{ mb: 1 }} component='p'>
                 <em>{item.quote}</em>
               </Typography>

@@ -5,8 +5,8 @@ import HomeCardLayout from './UI/HomeCardLayout';
 
 const cardContent = [
   { icon: 'Icon placeholder 1', text: 'Text 1', rootMargin: '-100px 0px' },
-  { icon: 'Icon placeholder 2', text: 'Text 2', rootMargin: '-150px 0px' },
-  { icon: 'Icon placeholder 3', text: 'Text 3', rootMargin: '-200px 0px' },
+  { icon: 'Icon placeholder 2', text: 'Text 2', rootMargin: '-200px 0px' },
+  { icon: 'Icon placeholder 3', text: 'Text 3', rootMargin: '-300px 0px' },
 ];
 
 const About = () => {

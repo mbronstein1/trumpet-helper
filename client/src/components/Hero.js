@@ -12,9 +12,9 @@ const Hero = () => {
     <Box className={classes['hero-container']}>
       <Card className={classes.overlay}></Card>
       <Box className={classes.slideshow}>
-        <Carousel swipe={false} duration={1000} interval={10000} animation='slide' indicators={false}>
+        <Carousel swipe={false} duration={1000} interval={10000} animation='slide' height='100svh' indicators={false}>
           {slideshowImg.map((item, i) => (
-            <CardMedia key={`${item}: ${i}`} component='img' alt='Image-carousel' image={item} title='Image-carousel' style={{ height: '100svh' }} />
+            <CardMedia key={`${item}: ${i}`} component='img' alt='Image-carousel' image={item} title='Image-carousel' style={{ height: '100%' }} />
           ))}
         </Carousel>
         <Typography variant='h3' component='h2' className={classes['slideshow-text']}>
